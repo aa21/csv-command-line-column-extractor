@@ -13,8 +13,13 @@ Extract a single column from a csv file from command line using this script.
   - quotationSymbol: Default is double apostrophe ( " )
 
 
-  E.g
+<b>E.g To dump the third column's contents:</b>
 
-   cli_csv.py orders.csv 0 w ';' '"'
+    cli_csv.py orders.csv 2
 
-  to write the contents of the first column to a new file.
+
+<b>E.g to write the contents of the first column to a new file:
+
+    cli_csv.py orders.csv 0 w ';' '"'
+
+  
