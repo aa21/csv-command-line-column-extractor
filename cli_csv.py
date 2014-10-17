@@ -9,8 +9,11 @@ from collections import defaultdict
 print "\n file, col, write=w, delim, quote  or"
 print "\n file t[cols][,rows]  \n"
 
+
 if 1 < len(sys.argv):
 	file = str(sys.argv[1])
+	if len(sys.argv) == 2  : # there's no second arg
+		sys.argv.append('t')
 else:
 	exit('No filename given.') 
 
@@ -30,6 +33,7 @@ if 2 < len(sys.argv):
 			ssize = 5
 
 	else:
+		sample = False
 		col = int(sys.argv[2])
 else:
 	exit('No Column number.') 
@@ -79,11 +83,17 @@ if sample:
 
 if write:
 	new_file = open(file+'_EMAILS', "w")
+else:
+	stop=20
 
+i = 0
 for row in reader:
 	if not write:
 		if col < len(row):
 			print row[col]
+			i += 1
+			if i>= stop:
+				exit()
 	else:
 		new_file.write(row[col] + "\n")
 
