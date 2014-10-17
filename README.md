@@ -30,12 +30,23 @@ There are two modes: Sampler mode and Regular mode. Sample mode is used to quick
     cli_csv.py orders.csv 0 w ';' '"'
 
   
-2. <b>Sampler Mode</b> 
+2. <b>Sampler Mode - to get a sense of the column structure.</b> 
 
   <i>Arguments: fileName, t[cols][,rows]
 
   - <b>fileName</b>: can be relative file path also
-  - <b>t</b>: triggers sample mode, dumps first 5 columns and first 5 rowdata for eachcolumn
-  - <b>cols</b>: sample more columns, e.g t10 will dump data from first 10 columns
-  - <b>rows</b>: sample more rows, e.g t2,10 will dump 10 row data from first 2 columns
+  - <b>t</b>: triggers sample mode, by default dumps 5x5 data, column by column.
+  - <b>cols</b>: sample more columns, default 5 - e.g t10 will dump data from first 10 columns
+  - <b>rows</b>: sample more rows, default 5 - e.g t2,10 will dump 10 row data from first 2 columns
 
+  <b>E.g See first 5 columns, sampling 5 rows for each</b>
+  
+    cli_csv.py orders.csv t
+    
+  <b>E.g See first 15 columns, sampling 5 rows for each</b>    
+  
+    cli_csv.py orders.csv t15
+  
+  <b>E.g See first 4 columns, sampling 15 rows for each</b>    
+  
+    cli_csv.py orders.csv t4,15
