@@ -10,7 +10,7 @@ This script came about because I have hundreds of irregularly structured csv fil
 There are two modes: Sampler mode and Regular mode. Sample mode is used to quickly get a sense of the file's structure and locate the column I'm looking for. Regular mode is used for printing specific column's data to screen or to write that column's data to a file.
 
 
-  1. <b>Regular Mode</b>
+1. <b>Regular Mode</b>
   
     <i>Arguments: fileName, columnNumber [, write=p, delimiter=',', quotationSymbol='"']  
 
@@ -30,7 +30,7 @@ There are two modes: Sampler mode and Regular mode. Sample mode is used to quick
     cli_csv.py orders.csv 0 w ';' '"'
 
   
-  2. <b>Sampler Mode</b> 
+2. <b>Sampler Mode</b> 
     <i>Arguments: fileName, t[cols][,rows]
 
   - <b>fileName</b>: can be relative file path also
