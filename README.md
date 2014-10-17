@@ -12,7 +12,7 @@ There are two modes: Sampler mode and Regular mode. Sample mode is used to quick
 
 1. <b>Regular Mode</b>
   
-    <i>Arguments: fileName, columnNumber [, write=p, delimiter=',', quotationSymbol='"']  
+  <i>Arguments: fileName, columnNumber [, write=p, delimiter=',', quotationSymbol='"']  
 
   - <b>fileName</b>: can be relative file path
   - <b>columnNumber</b>: starts from 0
@@ -31,7 +31,8 @@ There are two modes: Sampler mode and Regular mode. Sample mode is used to quick
 
   
 2. <b>Sampler Mode</b> 
-    <i>Arguments: fileName, t[cols][,rows]
+
+  <i>Arguments: fileName, t[cols][,rows]
 
   - <b>fileName</b>: can be relative file path also
   - <b>t</b>: triggers sample mode, dumps first 5 columns and first 5 rowdata for eachcolumn
