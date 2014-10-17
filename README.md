@@ -7,7 +7,7 @@ Purpose of this script:
 
 This script came about because I have hundreds of irregularly structured csv files and I need to extract just the postal code data from all of them. With this script I don't need to fire up Excel for each file. I can sample just the first few rows and columns (or more) and quickly dump the column I need to another file. 
 
-There are two modes: Sampler mode and Regular mode. Sample mode is used to quickly see what data is in each column. Regular mode is used for printing specific column's data to screen or to write that column's data to a file.
+There are two modes: Sampler mode and Regular mode. Sample mode is used to quickly get a sense of the file's structure and locate the column I'm looking for. Regular mode is used for printing specific column's data to screen or to write that column's data to a file.
 
 
   1. <b>Regular Mode</b>
