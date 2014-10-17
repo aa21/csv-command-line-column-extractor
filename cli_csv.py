@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import csv, sys
+from collections import defaultdict
 
 # file, col, write, delim, quote
 
@@ -14,7 +15,22 @@ else:
 	exit('No filename given.') 
 
 if 2 < len(sys.argv):
-	col = int(sys.argv[2])
+	arg2 = str(sys.argv[2])
+	if arg2.startswith('t'):
+		sample = True
+		if arg2.find(",") != -1:
+			bits = arg2[1:].split(",")
+			scols = int(bits[0])
+			ssize = int(bits[1])
+		elif len(arg2[1:]) >0 :
+			scols = int(arg2[1:])
+			ssize = 5
+		else:
+			scols = 5
+			ssize = 5
+
+	else:
+		col = int(sys.argv[2])
 else:
 	exit('No Column number.') 
 
@@ -38,12 +54,36 @@ else:
 
 reader = csv.reader(open(file, "rU"), delimiter=delim, quotechar=quote) 
 
+
+if sample:
+	columns = defaultdict(list)
+	reader.next()
+
+	s = 0
+
+	for row in reader:
+		c = 0
+		for (i,v) in enumerate(row):
+			columns[i].append(v)
+			c += 1
+			if c>=scols:
+				break;
+		s += 1
+		if s>= ssize:
+			break;
+
+	for d in columns: 
+		print str(d) + ": " + str(columns[d]) 
+
+	exit()
+
 if write:
 	new_file = open(file+'_EMAILS', "w")
 
 for row in reader:
 	if not write:
-		print row[col]
+		if col < len(row):
+			print row[col]
 	else:
 		new_file.write(row[col] + "\n")
 
