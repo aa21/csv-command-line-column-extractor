@@ -6,8 +6,8 @@ from collections import defaultdict
 # file, col, write, delim, quote
 
 
-print "\n file, col, write=w, delim, quote  \n"
-
+print "\n file, col, write=w, delim, quote  or"
+print "\n file t[cols][,rows]  \n"
 
 if 1 < len(sys.argv):
 	file = str(sys.argv[1])
